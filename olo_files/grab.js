@@ -1,25 +1,3 @@
-function get(id) {
-    return document.getElementById(id)
-}
-
-function init() {
-
-}
-
-
-function update() {
-    get("mything").data("height").value += 1;
-}
-
-window.onload = function start() {
-    init();
-    startUpdateLoop();
-}
-
-function startUpdateLoop() {
-    window.setInterval(update, 16);
-}
-
 AFRAME.registerComponent('grab', {
     init: function() {
         this.GRABBED_STATE = 'grabbed';
