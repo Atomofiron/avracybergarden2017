@@ -1,8 +1,4 @@
-function get(id) {
-    return document.getElementById(id)
-}
 
-var clog = console.log
 
 function init() {
 
@@ -29,3 +25,4 @@ window.onload = function start() {
 function startUpdateLoop() {
     window.setInterval(update, 16);
 }
+
