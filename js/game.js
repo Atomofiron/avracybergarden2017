@@ -10,6 +10,7 @@ function init() {
 
 
 function update() {
+    // get(id)
 }
 
 window.onload = function start() {
