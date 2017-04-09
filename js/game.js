@@ -25,31 +25,41 @@ function tempShootCaller() {
     })
 }
 
-function spawnEnemy(position, speed, scale) {
-
+function spawnEnemy(position, speed, radius) {
+    var scene = document.querySelector('a-scene');
+    var enemy = document.createElement('a-cylinder');
+    enemy.setAttribute('color', '#FF9500');
+    enemy.setAttribute('height', '1');
+    enemy.setAttribute('radius', radius);
+    enemy.setAttribute('position', position);
+    var animation = document.createElement('a-animation')
+    animation.setAttribute('attribute', 'position')
+    animation.setAttribute('repeat', '0')
+    animation.setAttribute('dur', speed)
+    animation.setAttribute('to', '0 0 0')
+    enemy.appendChild(animation);
+    scene.appendChild(enemy);
 }
 
 function shoot(position, direction) {
-    clog("aasas")
+    var scene = document.querySelector('a-scene'); 
+    var cylinder = document.createElement('a-cylinder');
+    cylinder.setAttribute('color', '#FF0000');
+    cylinder.setAttribute('height', '200');
+    cylinder.setAttribute('radius', radius);
+    cylinder.setAttribute('position', position);
+    scene.appendChild(cylinder);
 }
 
 function update() {
+}
 
-    var a = get("bone0_1")
-
-    a.setAttribute('position', {
-        x: 3,
-        y: 3,
-        z: 3
-    })
-    // a = 
-    // var position = mything.getAttribute('position');
-
-    // mything.setAttribute('position', {
-    //     x: position.x + this.deltaPosition.x,
-    //     y: position.y + this.deltaPosition.y,
-    //     z: position.z + this.deltaPosition.z
-    // });
+function updateTwoSeconds() {
+    var distMult = 300
+    var half = distMult / 2
+    spawnEnemy({x: Math.random() * distMult - half, 
+                y: Math.random() * distMult - half, 
+                z: Math.random() * distMult - half}, 11000, 1)
 }
 
 window.onload = function start() {
@@ -59,4 +69,5 @@ window.onload = function start() {
 
 function startUpdateLoop() {
     window.setInterval(update, 16);
+    window.setInterval(updateTwoSeconds, 2000);
 }
