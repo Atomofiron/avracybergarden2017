@@ -1,0 +1,6 @@
+var clog = console.log
+var controllerOptions = {enableGestures: true};
+
+Leap.loop(controllerOptions, function(frame) {
+	clog("ku")
+})
