@@ -1,11 +1,11 @@
 
 
-function init() {
+function init() {/*
   var boxEl = get('bone0_2')
   boxEl.addEventListener('mousedown', function () {
     clog("asd")
     tempShootCaller()
-  });
+  });*/
 }
 
 function tempShootCaller() {
